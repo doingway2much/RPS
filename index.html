@@ -8,11 +8,20 @@
 </head>
 
 <body>
-
+<img src="" alt="">
   <div id="game">
     <h1>Welcome to Rock, Paper, Scissors</h1>
-    <div id="player"> </div>
+    
+    <div id="player"> 
+       
+        <button onclick="myFunctionR()">Pick Rock</button>
+        <button onclick="myFunctionP()">Pick Paper</button>
+        <button onclick="myFunctionS()">Pick Scissors</button>
+        <br>
+        <img id="pick" src="">
+    </div>
     <div id="computer"></div>
+    </div>
   </div>
 
   <script type="text/javascript">
@@ -25,18 +34,21 @@
 
       // Determines which key was pressed.
       var userGuess = event.key;
-
+ 
       // Randomly chooses a choice from the options array. This is the Computer's guess.
       var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
       // Alerts the key the user pressed (userGuess).
       alert("User guessed: " + userGuess);
-
-      // Alerts the Computer's guess.
       alert("Computer guessed: " + computerGuess);
 
+      
       // Displays the players choice in the player id
-      var choice1 = document.getElementById("player");
+    
+      // var choice1 = document.getElementById("player");
+      // choice1.innerHTML = ("<p> The player guessed " + userGuess + "</p>");
+
+      var choice1 = document.getElementById("player1").src;
       choice1.innerHTML = ("<p> The player guessed " + userGuess + "</p>");
 
       // Displays the computer  choice in the computer id
@@ -69,9 +81,22 @@
       else if (userGuess === "s" && computerGuess === "r") {
         alert("You Win!!!!'");
       }
-
     };
 
+
+    function myFunctionR() {
+      var player1R = document.getElementById("pick").src = "img/rock.jpg";
+      }
+      function myFunctionP() {
+      var player1P = document.getElementById("pick").src = "img/paper.jpg";
+      }
+      function myFunctionS() {
+      var player1S = document.getElementById("pick").src = "img/scissors.jpg";
+      }
+        var player2Guess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        var choice3 = document.getElementById("computer");
+        choice3.innerHTML = ("<p> The computer guessed " + player2Guess + "</p>");
+      
 
   </script>
 
